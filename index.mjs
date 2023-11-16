@@ -65,7 +65,7 @@ let getFact = async (date, month) => {
     const text = one_event.text;
     const year = one_event.year;
 
-    fact.textContent = `On ${year} , ${text}`;
+    fact.textContent = `In ${year} , ${text}`;
   } catch {
     fact.textContent = `Opps , Nothing happened on your birthday`;
   }
@@ -83,7 +83,7 @@ let getWeather = async (date) => {
     const temp = info.temp;
     const humidity = info.humidity;
     const icon = info.icon;
-    weather.textContent = `On your birthday it was ${description}, the temperature was ${temp} degree celsius and the humidity was ${humidity}`;
+    weather.textContent = `On your birthday it was ${description} the temperature was ${temp} degree celsius and the humidity was ${humidity}`;
   } catch {
     weather.textContent =
       "Opps, May be your birth date weather information is not available";
