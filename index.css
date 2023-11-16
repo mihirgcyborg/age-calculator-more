@@ -1,0 +1,138 @@
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    height: 100vh;
+    background-color: #596475;
+    
+}
+
+.container{
+    padding: 30px;
+    border-radius: 12px;
+    width: 90%;
+    max-width: 450px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    box-shadow: 22px 25px 59px 2px #210124;
+} 
+
+.input-section, .output-section{
+    margin: 15px 0;
+}
+
+h1,h2{
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 24px;
+}
+
+
+.input-section{
+    display:flex;
+    flex-direction: column;
+    align-items: start;
+    
+}
+.output-section{
+    display:none;
+    background-color: #f0f0f0;
+    border-radius: 6px;
+    padding: 10px;
+    margin-top: 20px;
+    text-align: center; 
+    font-size: 18px;  
+    color: #333;
+}
+
+
+label{
+    margin-bottom: 10px;
+    font-size: 15px;
+    color: #555;
+}
+
+input[type="date"]{
+    width: 70%;
+    padding: 10px 15px;
+    font-size: 14px;
+    border: 1px solid #e0e0e0;
+    border-radius: 6px;
+    transition: border-color 0.3;
+
+}
+input[type="date"]:focus{
+    border-color: #007bff;
+}
+
+input::placeholder{
+    color:#999;
+}
+
+#btns{
+    display: flex;
+    justify-content: center;
+    width: 90%;
+    gap: 5px;
+}
+.btn{
+    margin-top: 20px;
+    padding: 12px 15px;
+    color: rgb(7, 4, 4);
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    
+}
+
+#calculateBtn{
+    background-color: #007bff;
+    transition:  background-color 0.3s;
+}
+
+#resetBtn{
+    background-color: rgb(11, 208, 66);
+    transition: back-ground-color 0.3s;
+}
+
+#calculateBtn:hover{
+    background-color: #0056b3;
+}
+
+#resetBtn:hover{
+    background-color:  rgb(4, 108, 32) ;
+}
+
+
+.aside{
+    padding: 30px;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #f0f0f0, #cacaca);
+    width: 50%;
+    max-width: 200px;
+
+}
+.aside>p{
+    text-align: center;
+    font-weight:200;
+    font-size: medium;
+   
+}
+
+
+@media screen and (max-width: 768px){
+    body{
+        flex-direction: column;
+    }
+    .aside{
+        width: 60%;
+        max-width: 250px;
+        
+    }
+    .aside>h2{
+        font-size:large;
+    }
+}
