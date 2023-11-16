@@ -128,11 +128,40 @@ input::placeholder{
         flex-direction: column;
     }
     .aside{
+        padding: 10px 30px ;
         width: 60%;
         max-width: 250px;
         
     }
     .aside>h2{
         font-size:large;
+    }
+    .container{
+        padding: 10px 30px ;
+        border-radius: 12px;
+        width: 80%;
+   
+    }
+    
+    
+}
+@media screen and (max-width: 376px){
+    .aside{
+        padding: 5px 20px;
+    }
+    .aside>p{
+        margin: 5px 0px;
+        font-size: small;
+    }
+    .aside>h2{
+        margin: 8px 0px;
+        font-size: medium;
+    }
+    .container>h1{
+        margin: 5px auto;
+        font-size: larger;
+    }
+    .output-section{
+        margin: 5px auto;
     }
 }
