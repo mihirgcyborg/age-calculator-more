@@ -1,5 +1,4 @@
 const apiKey = import.meta.env.VITE_API_KEY;
-console.log(apiKey);
 let interval;
 
 const today = new Date().toISOString().split("T")[0];
@@ -55,10 +54,18 @@ function resetCalculator() {
 let getFact = async (date, month) => {
   const fact = document.getElementById("fact-output");
   try {
-    const response = await fetch(`http://numbersapi.com/${month}/${date}/date`);
-    const data = await response.text();
-    fact.textContent = `${data}`;
-    fact.style.cssText = "font-weight:200 ; font-size: medium;";
+    //const response = await fetch(`http://numbersapi.com/${month}/${date}/date`);
+    const response = await fetch(
+      `https://history.muffinlabs.com/date/${month}/${date}`
+    );
+    const complete_data = await response.json();
+    const data = complete_data.data;
+    const events = data.Events;
+    const one_event = events[events.length - 2];
+    const text = one_event.text;
+    const year = one_event.year;
+
+    fact.textContent = `On ${year} , ${text}`;
   } catch {
     fact.textContent = `Opps , Nothing happened on your birthday`;
   }
@@ -71,7 +78,6 @@ let getWeather = async (date) => {
       `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/London,UK/${date}?key=A2JRCDDMBJLHEV5BFA3Q2PJTM`
     );
     const data = await response.json();
-    console.log(data);
     const info = data.days[0];
     const description = info.description;
     const temp = info.temp;
