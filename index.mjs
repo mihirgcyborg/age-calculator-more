@@ -28,9 +28,12 @@ function calculateAge() {
     const minutes = Math.floor(seconds / 60);
     const hours = Math.floor(minutes / 60);
     const days = Math.floor(hours / 24);
-    const years = Math.floor(days / 365);
 
-    output.textContent = `Your  age is: ${years % 365} years ${
+    const years = today.getFullYear() - dob.getFullYear();
+    const remainingMonths = (12 + today.getMonth() - dob.getMonth()) % 12;
+    const adjustedYears = years - (remainingMonths === 12 ? 1 : 0);
+
+    output.textContent = `Your  age is: ${adjustedYears} years ${remainingMonths} months ${
       days % 24
     } days ${hours % 60} hours ${minutes % 60} minutes ${
       seconds % 1000
